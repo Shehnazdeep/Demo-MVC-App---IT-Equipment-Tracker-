@@ -23,6 +23,11 @@ a {
   border-color: #1861ac;
 }
 
+.container-fluid{
+  background-color: #c8eff3; 
+
+}
+
 .border-top {
   border-top: 1px solid #e5e5e5;
 }
@@ -45,4 +50,5 @@ button.accept-policy {
   width: 100%;
   white-space: nowrap;
   line-height: 60px;
+  background-color: #c8eff3; 
 }
