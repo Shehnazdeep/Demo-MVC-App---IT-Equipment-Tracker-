@@ -19,7 +19,24 @@ public class HomeController : Controller
     }
 
 
+    //GET /home/RsvpForm
 
+    public IActionResult RequestForm()
+    {
+        return View();
+
+    }
+
+
+ [HttpPost]
+    public IActionResult SaveRequest(EquipmentRequest request){
+
+
+        return View("RequestForm");
+       
+       
+
+    }
 
   
 
