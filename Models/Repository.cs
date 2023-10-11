@@ -47,5 +47,8 @@ namespace Assignment_1.Models
 
     public static IEnumerable<Equipment> GetAllEquipments() => _equipmentList;
 
+
+     public static IEnumerable<Equipment> GetAvailableEquipments() => _equipmentList.Where(x => x.Availability);
+
     }
 }

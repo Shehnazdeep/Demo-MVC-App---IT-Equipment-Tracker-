@@ -19,7 +19,6 @@ public class HomeController : Controller
     }
 
 
-    //GET /home/RsvpForm
 
     public IActionResult RequestForm()
     {
@@ -47,11 +46,11 @@ public class HomeController : Controller
        
 
     }
-    [HttpGet]
-    public IActionResult RequestList(){
+   
+    public IActionResult Requests(){
 
-        var list = Repository.GetAll();
-        return View(list);
+        var requests = Repository.GetAll();
+        return View("RequestList",requests);
         
     }
 
@@ -63,7 +62,14 @@ public class HomeController : Controller
         return View("AllEquipmentListing",elist);
         
     }
-  
+
+   [HttpGet]
+    public IActionResult AllAvailableEquipmentList(){
+
+        var alist = Repository.GetAvailableEquipments();
+        return View("AllEquipmentListing",alist);
+        
+    }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()

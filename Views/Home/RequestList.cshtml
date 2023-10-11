@@ -1,0 +1,16 @@
+@model IEnumerable<EquipmentRequest>
+
+   <table class="table table-bordered table-striped table-sm">
+            <thead>
+                <tr><th>Equipment Selected</th><th>Name</th><th>Role</th></tr>
+            </thead>
+            <tbody>
+                @foreach (var request in Model) {
+                    <tr>
+                        <td>@request.EquipmentSelected</td>
+                        <td>@request.Name</td>
+                        <td>@request.Role</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
