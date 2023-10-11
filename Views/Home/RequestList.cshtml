@@ -2,7 +2,7 @@
 
    <table class="table table-bordered table-striped table-sm">
             <thead>
-                <tr><th>Equipment Selected</th><th>Name</th><th>Role</th></tr>
+                <tr><th>Equipment Selected</th><th>Name</th><th>Role</th><th>Accept/Deny</th></tr>
             </thead>
             <tbody>
                 @foreach (var request in Model) {
@@ -10,6 +10,7 @@
                         <td>@request.EquipmentSelected</td>
                         <td>@request.Name</td>
                         <td>@request.Role</td>
+                        <td> <button>Accept</button>  <button>Deny</button> </td>
                     </tr>
                 }
             </tbody>
