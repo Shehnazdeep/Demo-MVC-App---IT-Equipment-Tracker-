@@ -9,7 +9,7 @@
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
 <form asp-action="SaveRequest" method="post"> 
 
-<div asp-validation-summary="All">
+<div asp-validation-summary="All"> </div>
 
  <div class="form-group">
     <label for="Name">  Name</label>
@@ -25,19 +25,20 @@
     <br>
 
 <div class="form-group">
-    <label for="PhoneNumber">  Phone Number</label>
+    <label for="PhoneNumber">  Phone Number:  (e.g. 905-922-2222) </label>
     <input type="Text" asp-for="PhoneNumber" >
   </div>
 
     <br>
-<div>
-    <label for="userType">Select your role:</label>
-<select id="userType" name="userType" asp-for="Role">
-  <option value="student">Student</option>
-  <option value="professor">Professor</option>
-</select>
-</div>
 
+  <div>
+            <label asp-for="Role">Please select your role</label>
+            <select asp-for="Role">
+                <option value="">Choose an option</option>
+                <option value="student"> Student </option>
+                <option value="professor"> Professor </option>
+            </select>
+        </div>
     <br>
 
 <div>
@@ -45,6 +46,7 @@
 <select asp-for="EquipmentSelected" asp-items="Html.GetEnumSelectList<EquipmentRequest.EquipmentType>()"> <option selected="selected" value="">Please select the device type</option>
 </select>
 </div>
+
 <br>
 
 <div class="form-group">
@@ -62,7 +64,7 @@
 
 
 
-</div>
+
 
 
   <button type="submit" class="btn btn-primary">Submit</button>

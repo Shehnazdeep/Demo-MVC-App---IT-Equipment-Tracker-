@@ -1,0 +1,23 @@
+ @model IEnumerable<Equipment> 
+
+
+
+     <div class="text-center p-2">
+        <h2 class="text-center">
+            Here is the list of all the Equipments you can choose from &#x1F4BB
+        </h2>
+        <table class="table table-bordered table-striped table-sm">
+            <thead>
+                <tr><th>Equipment ID</th><th>Equipment Type</th><th>Equipemnt Description</th></tr>
+            </thead>
+            <tbody>
+                @foreach (var equipment in Model) {
+                    <tr>
+                        <td>@equipment.EquipmentId</td>
+                        <td>@equipment.EquipmentType</td>
+                        <td>@equipment.EquipmentDescription</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>

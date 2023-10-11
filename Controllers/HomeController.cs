@@ -31,13 +31,38 @@ public class HomeController : Controller
  [HttpPost]
     public IActionResult SaveRequest(EquipmentRequest request){
 
+       if(ModelState.IsValid)
+        {
 
-        return View("RequestForm");
-       
+
+        Repository.AddRequest(request);
+
+        return View("Reply",request);       
+
+        }
+        else{
+
+            return View("RequestForm");
+        }
        
 
     }
+    [HttpGet]
+    public IActionResult RequestList(){
 
+        var list = Repository.GetAll();
+        return View(list);
+        
+    }
+
+
+ [HttpGet]
+    public IActionResult AllEquipmentList(){
+
+        var elist = Repository.GetAllEquipments();
+        return View("AllEquipmentListing",elist);
+        
+    }
   
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -10,26 +10,30 @@ namespace Assignment_1.Models
     {
 
 
-        [Required]
+      public int Id {get; set;}
+
+      public bool Availability { get; set; }
+
+        [Required (ErrorMessage = "Please enter your name")]
         public string Name { get; set; }
 
-      [Required]
+      [Required (ErrorMessage = "Please enter your email address")]
         [EmailAddress]
         public string Email { get; set; }
 
-        [Required]
+        [Required (ErrorMessage = "Please enter your phone number")]
         [Phone]
         public string PhoneNumber { get; set; }
 
-       [Required]
+       [Required (ErrorMessage = "Please enter your role.")]
 
         public string Role { get; set; }
 
 
-      [Required]
+      [Required (ErrorMessage = "Please enter the request details")]
         public string RequestDetails { get; set; }
 
-        [Required]
+        [Required (ErrorMessage = "Please enter the duration of days the equipment is required.")] 
         public int Duration { get; set; }
 
     
@@ -41,7 +45,7 @@ namespace Assignment_1.Models
             Another
         }
 
-        [Required]
+        [Required (ErrorMessage = "Please select the equipment type")] 
          public EquipmentType EquipmentSelected { get; set; }
     }
 }
